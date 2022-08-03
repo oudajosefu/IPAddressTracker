@@ -1,34 +1,72 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Frontend Mentor - IP address tracker solution
 
-## Getting Started
+This is a solution to the [IP address tracker challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ip-address-tracker-I8-0yYAH0). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-First, run the development server:
+## Table of contents
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+-   [Overview](#overview)
+    -   [The challenge](#the-challenge)
+    -   [Screenshot](#screenshot)
+    -   [Links](#links)
+-   [My process](#my-process)
+    -   [Built with](#built-with)
+    -   [What I learned](#what-i-learned)
+    -   [Continued development](#continued-development)
+-   [Author](#author)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Note: Delete this note and update the table of contents based on what sections you keep.**
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Overview
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### The challenge
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Users should be able to:
 
-## Learn More
+-   View the optimal layout for each page depending on their device's screen size
+-   See hover states for all interactive elements on the page
+-   See their own IP address on the map on the initial page load
+-   Search for any IP addresses or domains and see the key information and location
 
-To learn more about Next.js, take a look at the following resources:
+### Screenshot
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![](./desktop-preview.png)
+![](./mobile-preview.png)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Links
 
-## Deploy on Vercel
+-   Solution URL: [Add solution URL here](https://your-solution-url.com)
+-   Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## My process
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+### Built with
+
+-   Semantic HTML5 markup
+-   Flexbox
+-   Mobile-first workflow
+-   Next API Routes
+-   [IP Geolocation API](https://geo.ipify.org/)
+-   [React Leaflet](https://react-leaflet.js.org/) - React components for Leaflet maps
+-   [Vercel](https://vercel.com/) - Website Deployment
+-   [TailwindCSS](https://tailwindcss.com/) - CSS framework
+-   [React](https://reactjs.org/) - JS library
+-   [Next.js](https://nextjs.org/) - React framework
+
+### What I learned
+
+I pretty much used this project to get myself extremely familiar with Next.js and everything there is to know about it. I believe it's honestly one of the best frontend frameworks and the fact that it can be used in place of Express.js to create a backend API is a great plus. Some things I learned include realizing the fact that Next.js is equipped with so many great tools that ended up filling the void caused by code not working.
+
+For example, Leaflet's package could not be imported into page component file due to the fact that it could not work with server-side rendering. The only workaround for this was to use `next/dynamic` which allows for dynamic importing of components for lazy loading. However, when implementing `Leaflet` and `React-Leaflet` into my main page, none of the components would work due to server side rendering so they had to be completely implemented into a separate React component folder which would use a `index.ts` file to export the main code of the component with the help of a dynamic import.
+
+I also learned how to properly implement client-side data fetching in Next.js which can be done with either a `useEffect` hook or a helper function that would be called on a form submission or button click.
+
+Lastly, there was a problem with the client-side data fetching where it wouldn't allow the client to run the request in the browser for security reasons. I ended up having to implement the data fetching in an Next.js API route that would handle the geolocation API request and return the response to the main page.
+
+### Continued development
+
+I definitely need to continue working on my Next.js skills because it's at times confusing to consider which type data fetching would be necessary for the required data. I would like to implement my own API based on a chosen database such as Supabase or PlanetScale in the future to really solidify these skills.
+
+## Author
+
+-   Frontend Mentor - [@oudajosefu](https://www.frontendmentor.io/profile/oudajosefu)
+-   Twitter - [@oudajosefu](https://www.twitter.com/oudajosefu)
